@@ -17,6 +17,9 @@ logs/
 outputs/
 checkpoints/
 results/
+!examples/results/
+!examples/results/*.csv
+!examples/results/*.md
 
 # Credentials and private access files
 secrets/
