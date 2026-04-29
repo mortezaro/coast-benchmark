@@ -1,0 +1,42 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Local data and generated artifacts
+data/
+raw_data/
+downloads/
+videos/
+audio/
+clips/
+tmp/
+logs/
+outputs/
+checkpoints/
+results/
+
+# Credentials and private access files
+secrets/
+*.env
+*cookie*
+*cookies*
+*credential*
+*credentials*
+*.pem
+*.key
+
+# Large model/data artifacts
+*.wav
+*.mp3
+*.mp4
+*.m4a
+*.flac
+*.parquet
+*.arrow
+*.safetensors
+*.pt
+*.pth
+*.ckpt

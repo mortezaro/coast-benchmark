@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coast-benchmark"
+version = "0.1.0"
+description = "Collaborative auditory grounding benchmark builders, validation checks, and model evaluation utilities."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "soundfile>=0.12",
+]
+
+[project.optional-dependencies]
+eval = [
+  "accelerate>=0.30",
+  "librosa>=0.10",
+  "protobuf>=4.25",
+  "sentencepiece>=0.2",
+  "torch>=2.2",
+  "torchaudio>=2.2",
+  "transformers>=4.51",
+]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
