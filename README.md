@@ -29,24 +29,6 @@ The current compact snapshot is `COAST Human-Valid 14-Task Compact V5`.
 
 Most tasks contain 312 examples. The explicit repair cue task contains 144 examples because high-precision real repair cues were rarer under the stricter human-validity rules.
 
-## Why The Evaluation Is Conservative
-
-COAST does not treat all rows as globally independent. Some source clips are reused across related tasks, so results are reported per task and per tier before any aggregate analysis. This avoids a misleading pooled score and makes it easier to see which capability a model is actually improving.
-
-Each retained task is checked for:
-
-- label balance
-- answer-position balance
-- majority-baseline collapse
-- always-first collapse
-- random-baseline sanity
-- train/test leakage within task
-- duplicate identifiers
-- prompt or option leakage
-- human answerability from audio
-
-Tasks that fail these checks are rebalanced, redesigned, or dropped.
-
 ## Task Groups
 
 ### Tier 1: Perceptual Auditory Grounding
@@ -136,6 +118,3 @@ python data_generation/build_coast_full_benchmark_results.py \
   --output-dir /path/to/results_tables
 ```
 
-## Data Access
-
-This repository does not redistribute source datasets. It stores code and evaluation logic only. Users are responsible for obtaining dataset access according to the original dataset licenses and terms.
